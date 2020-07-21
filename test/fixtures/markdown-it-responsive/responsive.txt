@@ -9,3 +9,16 @@ Responsive images:
 .
 <p><img src="header-test.png" srcset="header-test-small.png 320w, header-test-medium.png 640w" sizes="(min-width: 36em) 33.3vw, 100vw" alt="test"></p>
 .
+.
+![test](netlify-test.png)
+.
+<p><img src="netlify-test.jpg" srcset="netlify-test.jpg?nf_resize=fit&w=320 320w, netlify-test.jpg?nf_resize=fit&w=640 640w" sizes="(min-width: 36em) 33.3vw, 100vw" alt="test"></p>
+.
+.
+![test](netlify-missing-params-test.png)
+.
+<p><img src="netlify-missing-params-test.jpg" srcset="netlify-missing-params-test.jpg?nf_resize=fit&w=320 320w, netlify-missing-params-test.jpg?nf_resize=fit&w=640 640w" sizes="(min-width: 36em) 33.3vw, 100vw" alt="test"></p>
+.
+.
+
+

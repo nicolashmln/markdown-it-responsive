@@ -8,20 +8,50 @@ var generate = require('markdown-it-testgen');
 describe('markdown-it-responsive', function() {
   var option = { responsive: {
     'srcset': {
-      'header-*': [ {
-        width: 320,
-        rename: {
-          suffix: '-small'
-        }
+      'header-*': [ {       // <= files matching this wildcard pattern
+        width: 320,         // will be assigned this width
+        rename: {           // provide either this OR nf_resize (nf_resize wins)
+          suffix: '-small'  // <= and renamed with this suffix
+        },
+        nf_resize: 'smartcrop' // use netlify transformations: https://docs.netlify.com/large-media/transform-images/
       }, {
-        width: 640,
-        rename: {
-          suffix: '-medium'
-        }
-      } ]
+        width: 640,         // and this width
+        rename: {           // provide either this OR nf_resize (nf_resize wins)
+          suffix: '-medium' // will be renamed with this suffix
+        },
+        nf_resize: 'fit'    // use netlify transformations: https://docs.netlify.com/large-media/transform-images/
+      }
+                            // more widths can go here
+    ],
+    'netlify-*': [ {       // <= files matching this wildcard pattern
+      width: 320,         // will be assigned this width
+      rename: {           // provide either this OR nf_resize (nf_resize wins)
+        suffix: '-small'  // <= and renamed with this suffix
+      },
+      nf_resize: 'smartcrop' // use netlify transformations: https://docs.netlify.com/large-media/transform-images/
+    }, {
+      width: 640,         // and this width
+      rename: {           // provide either this OR nf_resize (nf_resize wins)
+        suffix: '-medium' // will be renamed with this suffix
+      },
+      nf_resize: 'fit'    // use netlify transformations: https://docs.netlify.com/large-media/transform-images/
+    }
+                          // more widths can go here
+  ],
+  'netlify-missing-params-*': [ {       // <= files matching this wildcard pattern
+    width: 320,         // will be assigned this width
+    nf_resize: 'smartcrop' // use netlify transformations: https://docs.netlify.com/large-media/transform-images/
+  }, {
+    width: 640,         // and this width
+    rename: {           // provide either this OR nf_resize (nf_resize wins)
+      suffix: '-medium' // will be renamed with this suffix
+    }
+  }
+                        // more widths can go here
+]
     },
     'sizes': {
-      'header-*': '(min-width: 36em) 33.3vw, 100vw'
+      'header-*': '(min-width: 36em) 33.3vw, 100vw' // this list must match above
     }
   } };
 
@@ -58,7 +88,7 @@ describe('Invalid operations', function() {
 describe('Wildcard to RegExp converter', function() {
   var wc2reg = require('../lib/wildcardToRegex.js');
 
-  it('Convert start (*)', function() {
+  it('Convert star (*)', function() {
     assert.deepEqual(wc2reg('test-*.png'), /test\-([\s\S]+?)\.png/);
   });
 
