@@ -8,7 +8,7 @@ lint:
 publish:
 	webpack ./
 	uglifyjs dist/markdown-it-responsive.js > dist/markdown-it-responsive.min.js
-	bower register markdown-it-responsive https://github.com/tatsy/markdown-it-responsive.git
+	bower register markdown-it-responsive https://github.com/davegardner/markdown-it-responsive.git
 
 test: lint
 	mocha

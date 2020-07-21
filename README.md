@@ -24,25 +24,70 @@ var md = require('markdown-it')({
 The notation to specify responsive sizes is as follows.
 
 ```js
-var option = { responsive: {
-    'srcset': {
-      'header-*': [ {
-        width: 320,
-        rename: {
-          suffix: '-small'
+// There are two ways to structure responsive image filenames:
+// - by suffix eg: header-sample.jpg, sets setsrc files to
+//      header-sample-small.jpg
+//      header-sample-medium.jpg
+// - by using netlify large media transformation querystrings eg: header-sample.jpg sets setsrc files to 
+//      header-sample.jpg?nf_resize=fix?w=320
+//      header-sample.jpg?nf_resize=fix?w=640
+// - in either case the src filename is unchanged. This is problematic with automatically resized files such as
+//   netlify transformations because usually the default file is huge. The problem could be solved if netlify
+//   supported quality transformations, but they don't.
+
+// BEWARE of overlapping wildcard patterns eg "example-*" and "example-1-*"
+// The FIRST matching rule is used
+describe('markdown-it-responsive', function () {
+  var option = {
+    responsive: {
+      'srcset': {
+        'header-*': [         // <= files matching this wildcard pattern
+          {                   // rule 0
+          width: 320,         // assign this width
+          rename: {           // 
+            suffix: '-small'  // file is renamed with this suffix
+          }
+        }, 
+        {                     // rule 1
+          width: 640,         // assign this width
+          rename: {           // 
+            suffix: '-medium' // and rename file with this suffix
+          }
         }
-      }, {
-        width: 640,
-        rename: {
-          suffix: '-medium'
-        }
-      } ]
-    },
-    'sizes': {
-      'header-*': '(min-width: 36em) 33.3vw, 100vw'
+          // more rules can go here
+        ],
+        'missing-params-*': [ // <= files matching this wildcard pattern
+          {                     // rule 0
+            width: 320,         // assign this width
+            nf_resize: 'smartcrop' // use netlify transformations: https://docs.netlify.com/large-media/transform-images/
+          },
+          {                     // rule 1
+            width: 640,         // assign this width
+            rename: {           // and rename
+              suffix: '-medium' // with this suffix
+            }
+          }
+          // more rules can go here
+        ],
+        'netlify-*': [        // <= files matching this wildcard pattern (that did not match above)
+          {                   // rule 0
+            width: 320,         
+            nf_resize: 'fit' 
+          }, 
+          {                     // rule 1
+            width: 640,         // and this width
+            nf_resize: 'fit'    // use netlify transformations: https://docs.netlify.com/large-media/transform-images/
+          }
+          // more rules can go here
+        ]
+      },
+      'sizes': { // this list must match wildcard patterns above
+        'header-*': '(min-width: 36em) 33.3vw, 100vw', 
+        'missing-params-*': '(min-width: 36em) 33.3vw, 100vw', 
+        'netlify-*': '(min-width: 36em) 33.3vw, 100vw', 
+      }
     }
-  }
-};
+  };
 ```
 
 ### Example
