@@ -1,6 +1,6 @@
 {
   "name": "@davegardner/markdown-it-responsive",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "markdown-it plugin for responsive images with support for Netlify Large Media Transforms",
   "main": "lib/index.js",
   "scripts": {
