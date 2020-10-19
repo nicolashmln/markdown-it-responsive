@@ -10,14 +10,44 @@ Responsive images:
 <p><img src="header-test.png" srcset="header-test-small.png 320w, header-test-medium.png 640w" sizes="(min-width: 36em) 33.3vw, 100vw" alt="test 2"></p>
 .
 .
+![test 2.1](/upload/header-folder-test.png)
+.
+<p><img src="/upload/header-folder-test.png" srcset="/upload/header-folder-test-small.png 320w, /upload/header-folder-test-medium.png 640w" sizes="(min-width: 36em) 33.3vw, 100vw" alt="test 2.1"></p>
+.
+.
 ![test 3](footer-test.png)
 .
 <p><img src="footer-test.png" srcset="small_footer-test.png 320w, medium_footer-test.png 640w" sizes="(min-width: 36em) 33.3vw, 100vw" alt="test 3"></p>
 .
 .
+![test 3.1](https://domain.com/footer-domain-test.png)
+.
+<p><img src="https://domain.com/footer-domain-test.png" srcset="https://domain.com/small_footer-domain-test.png 320w, https://domain.com/medium_footer-domain-test.png 640w" sizes="(min-width: 36em) 33.3vw, 100vw" alt="test 3.1"></p>
+.
+.
+![test 3.2](https://domain.com/upload/footer-domain-folder-test.png)
+.
+<p><img src="https://domain.com/upload/footer-domain-folder-test.png" srcset="https://domain.com/upload/small_footer-domain-folder-test.png 320w, https://domain.com/upload/medium_footer-domain-folder-test.png 640w" sizes="(min-width: 36em) 33.3vw, 100vw" alt="test 3.2"></p>
+.
+.
 ![test 4](netlify-test.jpg?nf_resize=fit\&w=10)
 .
 <p><img src="netlify-test.jpg?nf_resize=fit&w=10" srcset="netlify-test.jpg?nf_resize=fit&w=320 320w, netlify-test.jpg?nf_resize=fit&w=640 640w" sizes="(min-width: 36em) 33.3vw, 100vw" alt="test 4"></p>
+.
+.
+![test 4.1](/folder/netlify-test.jpg?nf_resize=fit\&w=10)
+.
+<p><img src="/folder/netlify-test.jpg?nf_resize=fit&w=10" srcset="/folder/netlify-test.jpg?nf_resize=fit&w=320 320w, /folder/netlify-test.jpg?nf_resize=fit&w=640 640w" sizes="(min-width: 36em) 33.3vw, 100vw" alt="test 4.1"></p>
+.
+.
+![test 4.2](https://domain.com/netlify-test.jpg?nf_resize=fit\&w=10)
+.
+<p><img src="https://domain.com/netlify-test.jpg?nf_resize=fit&w=10" srcset="https://domain.com/netlify-test.jpg?nf_resize=fit&w=320 320w, https://domain.com/netlify-test.jpg?nf_resize=fit&w=640 640w" sizes="(min-width: 36em) 33.3vw, 100vw" alt="test 4.2"></p>
+.
+.
+![test 4.1](https://domain.com/folder/netlify-test.jpg?nf_resize=fit\&w=10)
+.
+<p><img src="https://domain.com/folder/netlify-test.jpg?nf_resize=fit&w=10" srcset="https://domain.com/folder/netlify-test.jpg?nf_resize=fit&w=320 320w, https://domain.com/folder/netlify-test.jpg?nf_resize=fit&w=640 640w" sizes="(min-width: 36em) 33.3vw, 100vw" alt="test 4.1"></p>
 .
 .
 ![test 5](mixed-test.jpg)

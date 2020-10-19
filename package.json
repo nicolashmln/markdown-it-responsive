@@ -1,6 +1,6 @@
 {
-  "name": "@davegardner/markdown-it-responsive",
-  "version": "0.2.3",
+  "name": "@nicolashmln/markdown-it-responsive",
+  "version": "0.3.0",
   "description": "markdown-it plugin for responsive images with support for Netlify Large Media Transforms",
   "main": "lib/index.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/davegardner/markdown-it-responsive.git"
+    "url": "https://github.com/nicolashmln/markdown-it-responsive.git"
   },
   "keywords": [
     "markdown-it",
@@ -17,10 +17,13 @@
   "author": "tatsy",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/davegardner/markdown-it-responsive/issues"
+    "url": "https://github.com/nicolashmln/markdown-it-responsive/issues"
   },
-  "homepage": "https://github.com/davegardner/markdown-it-responsive",
-  "dependencies": {},
+  "homepage": "https://github.com/nicolashmln/markdown-it-responsive",
+  "dependencies": {
+    "path-parse": "^1.0.6",
+    "url-parse": "^1.4.7"
+  },
   "devDependencies": {
     "coveralls": "^2.11.2",
     "eslint": "^0.13.0",
