@@ -34,6 +34,21 @@ describe('markdown-it-responsive', function () {
           }
           // more rules can go here
         ],
+        'footer-*': [         // <= files matching this wildcard pattern
+          {                   // rule 0
+            width: 320,         // assign this width
+            rename: {           // 
+              prefix: 'small_'  // file is renamed with this suffix
+            }
+          },
+          {                     // rule 1
+            width: 640,         // assign this width
+            rename: {           // 
+              prefix: 'medium_' // and rename file with this suffix
+            }
+          }
+          // more rules can go here
+        ],
         'mixed-*': [ // <= files matching this wildcard pattern
           {                     // rule 0
             width: 320,         // assign this width
@@ -62,6 +77,7 @@ describe('markdown-it-responsive', function () {
       },
       'sizes': { // this list must match wildcard patterns above
         'header-*': '(min-width: 36em) 33.3vw, 100vw',
+        'footer-*': '(min-width: 36em) 33.3vw, 100vw',
         'mixed-*': '(min-width: 36em) 33.3vw, 100vw',
         'netlify-*': '(min-width: 36em) 33.3vw, 100vw',
       }

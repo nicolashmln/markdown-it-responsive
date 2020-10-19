@@ -10,14 +10,19 @@ Responsive images:
 <p><img src="header-test.png" srcset="header-test-small.png 320w, header-test-medium.png 640w" sizes="(min-width: 36em) 33.3vw, 100vw" alt="test 2"></p>
 .
 .
-![test 3](netlify-test.jpg?nf_resize=fit\&w=10)
+![test 3](footer-test.png)
 .
-<p><img src="netlify-test.jpg?nf_resize=fit&w=10" srcset="netlify-test.jpg?nf_resize=fit&w=320 320w, netlify-test.jpg?nf_resize=fit&w=640 640w" sizes="(min-width: 36em) 33.3vw, 100vw" alt="test 3"></p>
+<p><img src="footer-test.png" srcset="small_footer-test.png 320w, medium_footer-test.png 640w" sizes="(min-width: 36em) 33.3vw, 100vw" alt="test 3"></p>
 .
 .
-![test 4](mixed-test.jpg)
+![test 4](netlify-test.jpg?nf_resize=fit\&w=10)
 .
-<p><img src="mixed-test.jpg" srcset="mixed-test.jpg?nf_resize=smartcrop&w=320 320w, mixed-test-medium.jpg 640w" sizes="(min-width: 36em) 33.3vw, 100vw" alt="test 4"></p>
+<p><img src="netlify-test.jpg?nf_resize=fit&w=10" srcset="netlify-test.jpg?nf_resize=fit&w=320 320w, netlify-test.jpg?nf_resize=fit&w=640 640w" sizes="(min-width: 36em) 33.3vw, 100vw" alt="test 4"></p>
+.
+.
+![test 5](mixed-test.jpg)
+.
+<p><img src="mixed-test.jpg" srcset="mixed-test.jpg?nf_resize=smartcrop&w=320 320w, mixed-test-medium.jpg 640w" sizes="(min-width: 36em) 33.3vw, 100vw" alt="test 5"></p>
 .
 .
 
